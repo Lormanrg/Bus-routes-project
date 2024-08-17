@@ -1,0 +1,54 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type BusRoute {
+  arrivalTime: String!
+  availableSeats: Int!
+  busCapacity: Int!
+  departureTime: String!
+  destination: String!
+  id: Int!
+  legs: [Leg!]!
+  origin: String!
+  price: Float!
+  userId: String!
+}
+
+input CreateBusRouteInput {
+  arrivalTime: String
+  availableSeats: Int!
+  busCapacity: Int!
+  departureTime: String
+  destination: String!
+  origin: String!
+  price: Float!
+}
+
+type Leg {
+  distance: String!
+  duration: String!
+  endAddress: String!
+  startAddress: String!
+}
+
+type Mutation {
+  createBusRoute(createBusRouteInput: CreateBusRouteInput!): BusRoute!
+  removeBusRoute(id: Int!): BusRoute!
+  updateBusRoute(id: Int!, updateBusRouteInput: UpdateBusRouteInput!): BusRoute!
+}
+
+type Query {
+  busRoute(id: Int!): BusRoute!
+  getAllBusRoutes: [BusRoute!]!
+}
+
+input UpdateBusRouteInput {
+  arrivalTime: String
+  availableSeats: Int
+  busCapacity: Int
+  departureTime: String
+  destination: String
+  origin: String
+  price: Int
+}
