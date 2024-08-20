@@ -8,6 +8,7 @@ import { join } from 'path';
 import { PrismaModule } from './prisma/prisma.module';
 import { BusRoutesModule } from './bus-routes/bus-routes.module';
 import { HttpModule } from '@nestjs/axios';
+import { ImagesModule } from './images/images.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { HttpModule } from '@nestjs/axios';
     PrismaModule,
     BusRoutesModule,
     HttpModule,
+    ImagesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
